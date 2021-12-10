@@ -29,7 +29,7 @@ jobs:
   docker-run:
     runs-on: self-hosted
     steps:
-      - name: Login as sudo
-        run: sudo su
       - name: Run Docker image as service
-        run: docker service create -d -p 3000:3000 agustinheraclio/testing-infra:123
+        run:  | 
+        sudo su
+        docker service create -d -p 3000:3000 agustinheraclio/testing-infra:123
