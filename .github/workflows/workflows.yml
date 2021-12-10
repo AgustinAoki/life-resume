@@ -33,15 +33,10 @@ jobs:
     runs-on: self-hosted
     needs: build
 
-    strategy:
-      matrix:
-        node-version: [16.13.0]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Start npm
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm start
+      name: Build Docker Image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: false
+        tags: agustinheraclio/app:latest
