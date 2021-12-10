@@ -32,7 +32,6 @@ jobs:
   deploy:
     runs-on: self-hosted
     needs: build
-    
     steps:
         uses: actions/setup-node@v2
         with:
