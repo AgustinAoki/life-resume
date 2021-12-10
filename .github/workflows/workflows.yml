@@ -32,8 +32,10 @@ jobs:
   deploy:
     runs-on: self-hosted
     needs: build
+
     steps:
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
+      - name: Start npm
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
