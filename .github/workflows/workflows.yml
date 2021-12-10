@@ -40,3 +40,4 @@ jobs:
         context: .
         push: false
         tags: agustinheraclio/app:latest
+    - run: build
