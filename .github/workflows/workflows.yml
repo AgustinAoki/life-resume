@@ -15,5 +15,4 @@ jobs:
     steps:
       - name: Run Docker image as service
         run: |
-          sudo su
-          docker service create -d -p 3000:3000 agustinheraclio/testing-infra:123
+          sudo docker service create -d -p 3000:3000 agustinheraclio/testing-infra:123
