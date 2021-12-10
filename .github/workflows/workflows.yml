@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [main]
 
-  docker:
+  deploy:
     runs-on: self-hosted
     steps:
       - name: Checkout
