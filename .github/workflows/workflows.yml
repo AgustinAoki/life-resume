@@ -13,5 +13,5 @@ jobs:
   docker:
     runs-on: self-hosted
     steps:
-    - name: Pull Docker image
-      - run: sudo docker pull agustinheraclio/testing-infra:123
+      - name: Pull Docker image
+        run: sudo docker pull agustinheraclio/testing-infra:123
