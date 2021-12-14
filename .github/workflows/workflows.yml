@@ -30,8 +30,6 @@ jobs:
   docker-run:
     runs-on: self-hosted
     steps:
-      - name: Stop docker service
-        run: sudo docker service rm life-visual
       - name: Run Docker image as service
         run: |
           sudo docker service create -d -p 3000:3000 --name life-visual agustinheraclio/testing-infra:123

@@ -1,15 +1,14 @@
-FROM node:16
+FROM node:14-alpine
+# Add a work directory
+WORKDIR /
+# Cache and Install dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts@3.4.1 -g --silent
 
-WORKDIR /app
+# add app
+COPY . ./
 
-COPY ./src/ /app/src/
-
-COPY . /app/
-
-RUN npm install
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
+# start app
+CMD ["npm", "start"]
