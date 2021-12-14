@@ -29,6 +29,7 @@ jobs:
 
   docker-run:
     runs-on: self-hosted
+    needs: build-image
     steps:
       - name: Run Docker image as service
         run: |
