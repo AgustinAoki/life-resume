@@ -33,4 +33,6 @@ jobs:
     steps:
       - name: Run Docker image as service
         run: |
+          sudo docker image pull agustinheraclio/testing-infra:123
+          sudo docker service rm life-visual 
           sudo docker service create -d -p 3000:3000 --name life-visual agustinheraclio/testing-infra:123
